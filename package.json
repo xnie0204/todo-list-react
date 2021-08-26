@@ -1,0 +1,63 @@
+{
+  "author": "Chuntong Gao",
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "moment": "^2.29.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "react-scripts": "^4.0.3",
+    "redux-devtools-extension": "^2.13.9",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.7.2",
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-redux": "^7.1.18",
+    "@types/uuid": "^8.3.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "gh-pages": "^3.2.3",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.7",
+    "prettier": "^2.3.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-recommended": "^5.0.0",
+    "typescript": "^4.3.5"
+  },
+  "engines": {
+    "npm": "6.14.14"
+  },
+  "homepage": "https://chuntonggao.github.io/todo-list-react",
+  "license": "ISC",
+  "name": "todo-list-react",
+  "scripts": {
+    "build": "react-scripts build",
+    "check": "npm run stylelint && npm run prettier-check && npm run eslint-check && npm run tsc-check",
+    "deploy": "gh-pages -d build",
+    "eslint-check": "eslint --no-error-on-unmatched-pattern \"src/**/*.{ts,tsx}\"",
+    "eslint-fix": "eslint --no-error-on-unmatched-pattern \"src/**/*.{ts,tsx}\" --fix",
+    "fix": "npm run stylelint && npm run prettier-fix && npm run eslint-fix",
+    "prettier-check": "prettier --config ./.prettierrc.json --check \"./src/**/*.{tx,tsx}\"",
+    "prettier-fix": "prettier --config ./.prettierrc.json --write \"./src/**/*.{ts,tsx}\"",
+    "start": "react-scripts start",
+    "stylelint": "stylelint --fix \"./src/**/*.css\"",
+    "tsc-check": "tsc --noEmit"
+  },
+  "version": "1.0.0"
+}
