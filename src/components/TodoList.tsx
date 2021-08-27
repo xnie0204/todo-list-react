@@ -4,9 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteAllItems, toggleAllItems } from '../redux/actions';
 import { RootState } from '../redux/store';
 import { TodoItemType } from '../redux/types';
+import NewItemForm from './NewItemForm';
 import TodoItem from './TodoItem';
 
-const TodoList: React.FC = () => {
+const TodoList: React.FC = (): JSX.Element => {
     const dispatch = useDispatch();
     const items: TodoItemType[] = useSelector(
         (state: RootState) => state.todoList.items
@@ -45,7 +46,7 @@ const TodoList: React.FC = () => {
         <div className="content-div">
             <div className="create-item-div">
                 {items.length > 0 && toggleAllItemsButton}
-                {/* <NewMessageForm /> */}
+                <NewItemForm />
             </div>
             <div className="item-list-div">
                 <br />

@@ -19,7 +19,7 @@ const TodoItemDetails: React.FC<TodoItemDetailsProps> = (
         <React.Fragment>
             <li style={style}>Created on: &nbsp; {formatDate(createdOn)}</li>
             {done && (
-                <li style={style}>Read on: &nbsp; {formatDate(doneOn as Date)}</li>
+                <li style={style}>Done on: &nbsp; {formatDate(doneOn as Date)}</li>
             )}
             <li style={style}>Updated on: &nbsp; {formatDate(updatedOn)}</li>
         </React.Fragment>
