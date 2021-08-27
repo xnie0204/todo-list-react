@@ -2,7 +2,7 @@ import React from 'react';
 
 import ChildComponent from './ChildComponent';
 
-const App: React.FC = () => {
+const App: React.FC = (): JSX.Element => {
     return (
         <React.Fragment>
             <h1>Hello World</h1>

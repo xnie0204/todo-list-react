@@ -1,10 +1,10 @@
 import { applyMiddleware, combineReducers, createStore, Middleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import messageListReducer from './reducers';
+import reducers from './reducers';
 
 const rootReducer = combineReducers({
-    messageList: messageListReducer,
+    todoList: reducers,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

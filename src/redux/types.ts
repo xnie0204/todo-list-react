@@ -1,4 +1,4 @@
-export interface TodoItem {
+export interface TodoItemType {
     name: string;
     done: boolean;
     id: string;
@@ -8,7 +8,7 @@ export interface TodoItem {
 }
 
 export interface TodoListState {
-    items: TodoItem[];
+    items: TodoItemType[];
 }
 
 export const todoListActionTypes = {

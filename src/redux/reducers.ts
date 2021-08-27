@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid';
 import {
     AddItemAction,
     DeleteItemAction,
-    TodoItem,
+    TodoItemType,
     TodoListAction,
     todoListActionTypes,
     TodoListState,
@@ -55,7 +55,7 @@ export default (
 
         case todoListActionTypes.DELETE_ITEM: {
             const { id } = (action as DeleteItemAction).payload;
-            const updatedItems: TodoItem[] = state.items.filter(
+            const updatedItems: TodoItemType[] = state.items.filter(
                 item => item.id !== id
             );
             return {
@@ -70,7 +70,7 @@ export default (
         }
 
         case todoListActionTypes.TOGGLE_ITEM: {
-            const updatedItems: TodoItem[] = state.items.map(item => {
+            const updatedItems: TodoItemType[] = state.items.map(item => {
                 const { id, doneOn } = (action as ToggleItemAction).payload;
                 if (item.id === id) {
                     if (item.done === true) {
@@ -97,7 +97,7 @@ export default (
                 }
             }
 
-            const updatedItems: TodoItem[] = state.items.map(item => {
+            const updatedItems: TodoItemType[] = state.items.map(item => {
                 if (numDoneItems === numItems) {
                     // If all items are done,
                     // then make all items undone.
@@ -114,7 +114,7 @@ export default (
         }
 
         case todoListActionTypes.UPDATE_ITEM: {
-            const updatedItems: TodoItem[] = [...state.items];
+            const updatedItems: TodoItemType[] = [...state.items];
             const { id, name, updatedOn } = (action as UpdateItemAction).payload;
             for (const message of updatedItems) {
                 if (message.id === id) {
