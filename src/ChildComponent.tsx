@@ -9,8 +9,8 @@ const ChildComponent: React.FC<ChildComponentProps> = (
 ) => {
     const [count, setCount] = useState(1);
     const { message } = props;
-    const handleAdd = () => setCount(count + 1);
-    const handleSubtract = () => setCount(count - 1);
+    const handleAdd = (): void => setCount(count + 1);
+    const handleSubtract = (): void => setCount(count - 1);
 
     return (
         <div>
