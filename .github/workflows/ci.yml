@@ -17,7 +17,5 @@ jobs:
         run: npm install
       - name: check code quality (prettier, lint and typescript)
         run: npm run check
-      - name: build
-        run: npm run build
       - name: deploy
-        run: npm run deploy
+        run: tanwanimohit/deploy-react-to-ghpages@v1.0.1
