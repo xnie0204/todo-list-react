@@ -2,17 +2,13 @@ name: continuous integration & continuous deployment to GitHub Pages
 on:
   push:
     branches:
-      - deployed
+      - solution
 jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
       - name: check out branch
         uses: actions/checkout@v2
-      - name: authorize GitHub action
-        uses: oleksiyrudenko/gha-git-credentials@v1
-        with:
-          token: "${{ secrets.GITHUB_TOKEN }}"
       - name: set up node
         uses: actions/setup-node@v1
         with:
