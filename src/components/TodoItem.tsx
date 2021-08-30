@@ -11,7 +11,7 @@ type TodoItemProps = TodoItemType;
 const TodoItem: React.FC<TodoItemProps> = (props: TodoItemProps): JSX.Element => {
     const dispatch = useDispatch();
     const [editingMode, setEditingMode] = useState(false);
-    const [editedItemName, setEditedItemName] = useState('');
+    const [editedItemName, setEditedItemName] = useState(props.name);
     const [showItemDetails, setShowItemDetails] = useState(false);
 
     const quitEditingMode = (): void => {
