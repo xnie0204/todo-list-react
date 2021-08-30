@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { addItem, toggleAllItems } from '../redux/actions';
+import { addItem } from '../redux/actions';
 
 const NewItemForm = (): JSX.Element => {
     const dispatch = useDispatch();
@@ -11,10 +11,6 @@ const NewItemForm = (): JSX.Element => {
 
     const dispatchAddItemAction = (): void => {
         dispatch(addItem(input));
-    };
-
-    const dispatchToggleAllItemsAction = (): void => {
-        dispatch(toggleAllItems());
     };
 
     const clearForm = (): void => {
@@ -49,14 +45,6 @@ const NewItemForm = (): JSX.Element => {
         }
     };
 
-    const toggleAllItemsButton = (
-        <input
-            id="toggle-all-items-button"
-            type="checkbox"
-            onClick={dispatchToggleAllItemsAction}
-        />
-    );
-
     const createItemForm = (
         <form id="create-item-form" ref={createItemFormRef} onSubmit={handleSubmit}>
             <input
@@ -84,7 +72,6 @@ const NewItemForm = (): JSX.Element => {
 
     return (
         <React.Fragment>
-            {toggleAllItemsButton}
             {createItemForm}
             {clearFormButton}
         </React.Fragment>
