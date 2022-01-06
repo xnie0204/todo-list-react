@@ -1,13 +1,24 @@
 import React from 'react';
 
-import ChildComponent from './ChildComponent';
+import TodoList from './components/TodoList';
 
 const App: React.FC = () => {
+    const header = (
+        <div className="title-div">
+            <span className="title">
+                <a href="#">Your Todo List</a>
+            </span>
+            <span className="author">
+                <a href="#">&nbsp; Xiaomeng Nie &nbsp;</a>
+            </span>
+        </div>
+    );
+
     return (
-        <React.Fragment>
-            <h1>Hello World</h1>
-            <ChildComponent message={'Welcome to React'} />
-        </React.Fragment>
+        <div className="app-container">
+            {header}
+            <TodoList />
+        </div>
     );
 };
 
