@@ -13,11 +13,11 @@ const TodoList: React.FC = (): JSX.Element => {
         (state: RootState) => state.todoList.items
     );
 
-    const dispatchDeleteAllItemAction = (): void => {
+    const dispatchDeleteAllItemsAction = (): void => {
         dispatch(deleteAllItems());
     };
 
-    const dispatchToggleAllItemAction = (): void => {
+    const dispatchToggleAllItemsAction = (): void => {
         dispatch(toggleAllItems());
     };
 
@@ -26,11 +26,10 @@ const TodoList: React.FC = (): JSX.Element => {
             id="toggle-all-items-button"
             className="hide"
             type="checkbox"
-            onClick={dispatchToggleAllItemAction}
+            onClick={dispatchToggleAllItemsAction}
         />
     );
 
-    //let it become an array
     const todoItemJSXElements: JSX.Element[] = items.map(item => (
         <TodoItem
             name={item.name}
@@ -42,9 +41,10 @@ const TodoList: React.FC = (): JSX.Element => {
             updatedOn={item.updatedOn}
         />
     ));
+
     return (
         <div className="content-div">
-            <div className="create_item-div">
+            <div className="create-item-div">
                 {items.length > 0 && toggleAllItemsButton}
                 <NewItemForm />
             </div>
@@ -52,7 +52,7 @@ const TodoList: React.FC = (): JSX.Element => {
                 <br />
                 <ul>{todoItemJSXElements}</ul>
             </div>
-            <a id="delete-all-items-button" onClick={dispatchDeleteAllItemAction}>
+            <a id="delete-all-items-button" onClick={dispatchDeleteAllItemsAction}>
                 DELETE ALL
             </a>
         </div>

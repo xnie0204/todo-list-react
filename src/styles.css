@@ -258,3 +258,20 @@ END OF GENERAL STYLES
 #delete-all-items-button:hover {
   border-color: rgba(255, 255, 255, 1);
 }
+
+.show-item-details-button {
+  float: right;
+  display: inline-block;
+  border: none;
+  vertical-align: middle;
+  background-color: transparent;
+  font-size: calc(1rem + 1vw);
+  margin-top: 0;
+  margin-right: 1rem;
+  padding: 0;
+  color: var(--light-gray);
+}
+
+.show-item-details-button:hover {
+  color: var(--darkest-gray);
+}

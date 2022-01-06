@@ -2,14 +2,14 @@ import React from 'react';
 
 import TodoList from './components/TodoList';
 
-const App: React.FC = () => {
+const App: React.FC = (): JSX.Element => {
     const header = (
         <div className="title-div">
             <span className="title">
                 <a href="#">Your Todo List</a>
             </span>
             <span className="author">
-                <a href="#">&nbsp; Xiaomeng Nie &nbsp;</a>
+                <a href="https://cgao.info">&nbsp; Chuntong Gao &nbsp;</a>
             </span>
         </div>
     );

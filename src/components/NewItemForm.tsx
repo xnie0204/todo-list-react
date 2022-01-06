@@ -7,23 +7,22 @@ const NewItemForm = (): JSX.Element => {
     const dispatch = useDispatch();
     const [input, setInput] = useState('');
     const [typing, setTyping] = useState(false);
-    const createItemForRef = useRef<HTMLFormElement>(null);
+    const createItemFormRef = useRef<HTMLFormElement>(null);
 
     const dispatchAddItemAction = (): void => {
         dispatch(addItem(input));
     };
 
-    // become original state
     const clearForm = (): void => {
         setInput('');
         setTyping(false);
-        if (createItemForRef.current) {
-            createItemForRef.current.reset();
+        if (createItemFormRef.current) {
+            createItemFormRef.current.reset();
         }
     };
 
+    // handle submit event for createItemForm element
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
-        // don't let it refresh
         e.preventDefault();
         dispatchAddItemAction();
         clearForm();
@@ -47,7 +46,7 @@ const NewItemForm = (): JSX.Element => {
     };
 
     const createItemForm = (
-        <form id="create-item-form" ref={createItemForRef} onSubmit={handleSubmit}>
+        <form id="create-item-form" ref={createItemFormRef} onSubmit={handleSubmit}>
             <input
                 id="create-item-input"
                 type="text"
