@@ -9,7 +9,7 @@ const App: React.FC = (): JSX.Element => {
                 <a href="#">Your Todo List</a>
             </span>
             <span className="author">
-                <a href="https://cgao.info">&nbsp; Chuntong Gao &nbsp;</a>
+                <a href="#">&nbsp; Xiaomeng Nie &nbsp;</a>
             </span>
         </div>
     );
